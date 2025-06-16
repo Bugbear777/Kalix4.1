@@ -1,0 +1,42 @@
+﻿@inherits LayoutComponentBase
+@* Required *@
+<MudThemeProvider />
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+<MudLayout>
+
+    <!-- Drawer (Sidebar Navigation) -->
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="1"
+               Variant="DrawerVariant.Responsive" Breakpoint="Breakpoint.Md">
+        <NavMenu />
+    </MudDrawer>
+
+    <!-- AppBar (Top Bar) -->
+    <MudAppBar Elevation="4">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
+                       OnClick="@ToggleDrawer" Class="mud-ripple mud-theme-default" />
+        <MudText Typo="Typo.h6" Class="ml-2">Kalix TTRPG Tools</MudText>
+    </MudAppBar>
+
+    <!-- Main Content Area -->
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.False" Class="pa-4">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+
+</MudLayout>
+
+@code {
+    private bool _drawerOpen = true;
+
+    private void ToggleDrawer()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}
