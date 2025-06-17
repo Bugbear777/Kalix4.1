@@ -3,46 +3,6 @@
 @using Kalix4.Components.Models
 <PageTitle>Home</PageTitle>
 
-<MudCarousel T="FeaturedItem" Items="@Featured" ShowArrows="true" ShowBullets="true" AutoCycle="true" AutoCycleTime="5000">
-  <ItemTemplate Context="item">
-    <MudPaper Class="d-flex flex-column align-center pa-4" Style="height: 300px;">
-      <MudCard Style="max-width: 600px; width: 100%;">
-        <MudCardMedia Image="@item.ImageUrl" Style="height: 180px; width: 100%;" />
-        <MudCardContent>
-          <MudText Typo="Typo.h5">@item.Title</MudText>
-          <MudText Typo="Typo.body2">@item.Description</MudText>
-        </MudCardContent>
-        <MudCardActions>
-          <MudButton Variant="Variant.Outlined" Href="@item.LinkUrl">Learn More</MudButton>
-        </MudCardActions>
-      </MudCard>
-    </MudPaper>
-  </ItemTemplate>
-</MudCarousel>
 
 @code {
-  private List<FeaturedItem> Featured = new()
-    {
-        new FeaturedItem
-        {
-            Title = "Annwn, the Mist-Lost South",
-             ImageUrl = "/images/annwn.png",
-            Description = "A cold and mist-choked land where mortals walk among echoes of dead gods.",
-            LinkUrl = "/regions/annwn"
-        },
-        new FeaturedItem
-        {
-            Title = "Asura, the Horned Tyrant",
-            ImageUrl = "/images/asura.png",
-            Description = "Once a god of order and goodness — now remembered as a cruel savior.",
-            LinkUrl = "/pantheon/asura"
-        },
-        new FeaturedItem
-        {
-            Title = "The Aetherion Plateau",
-            ImageUrl = "/images/aetherion.png",
-            Description = "High above the world lies the burning homeland of the Asurai.",
-            LinkUrl = "/regions/aetherion"
-        }
-    };
 }
