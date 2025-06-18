@@ -1,0 +1,36 @@
+﻿@page "/species"
+@using Kalix4.Components.Models
+
+<MudText Typo="Typo.h4" Class="mb-4">Species of Kalix</MudText>
+
+<MudGrid>
+  @foreach (var species in AllSpecies)
+  {
+    <MudItem xs="12" sm="6" md="4" lg="3">
+      <MudCard Style="height: 100%;">
+        <MudCardMedia Image="@species.ImageUrl" Height="180" />
+        <MudCardContent>
+          <MudText Typo="Typo.h6">@species.Name</MudText>
+          <MudText Typo="Typo.body2">@species.Summary</MudText>
+        </MudCardContent>
+        <MudCardActions>
+          <MudButton Variant="Variant.Outlined" Href="@species.PageUrl">Learn More</MudButton>
+        </MudCardActions>
+      </MudCard>
+    </MudItem>
+  }
+</MudGrid>
+
+@code {
+  private List<SpeciesCard> AllSpecies = new()
+    {
+        new SpeciesCard
+        {
+            Name = "Asurai",
+            ImageUrl = "/images/asurai.png",
+            Summary = "Descendants of the Horned Tyrant Asura, these divine-marked beings walk between law and freedom.",
+            PageUrl = "/species/asurai"
+        }
+        // Add more as needed
+    };
+}
