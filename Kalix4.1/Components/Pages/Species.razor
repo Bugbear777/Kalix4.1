@@ -1,36 +1,98 @@
 ﻿@page "/species"
 @using Kalix4.Components.Models
 
-<MudText Typo="Typo.h4" Class="mb-4">Species of Kalix</MudText>
+<MudText Typo="Typo.h4" Class="mb-4">Species and Cultures</MudText>
 
-<MudGrid>
-  @foreach (var species in AllSpecies)
+<MudExpansionPanel>
+  <TitleContent>
+    <div class="d-flex">
+      <MudIcon Icon="@Icons.Material.Filled.Groups" Class="mr-2"></MudIcon>
+      <MudText>Species</MudText>
+    </div>
+  </TitleContent>
+  <ChildContent>
+    <MudGrid>
+      @foreach (var species in AllSpecies)
+      {
+        <MudItem xs="12" sm="6" md="4" lg="3">
+          <MudCard Style="height: 100%;">
+            <MudCardMedia Image="@species.ImageUrl" Height="180" />
+            <MudCardContent>
+              <MudText Typo="Typo.h6">@species.Name</MudText>
+              <MudText Typo="Typo.body2">@species.Summary</MudText>
+            </MudCardContent>
+            <MudCardActions>
+              <MudButton Variant="Variant.Outlined" Href="@species.PageUrl">Learn More</MudButton>
+            </MudCardActions>
+          </MudCard>
+        </MudItem>
+      }
+    </MudGrid>
+  </ChildContent>
+</MudExpansionPanel>
+<MudExpansionPanel>
+  <TitleContent>
+    <div class="d-flex">
+      <MudIcon Icon="@Icons.Material.Filled.Groups" Class="mr-2"></MudIcon>
+      <MudText>Cultures</MudText>
+    </div>
+  </TitleContent>
+  <ChildContent>
+    <MudGrid>
+      @foreach (var cultures in AllCultures)
+      {
+        <MudItem xs="12" sm="6" md="4" lg="3">
+          <MudCard Style="height: 100%;">
+            <MudCardMedia Image="@cultures.ImageUrl" Height="180" />
+            <MudCardContent>
+              <MudText Typo="Typo.h6">@cultures.Name</MudText>
+              <MudText Typo="Typo.body2">@cultures.Summary</MudText>
+            </MudCardContent>
+            <MudCardActions>
+              <MudButton Variant="Variant.Outlined" Href="@cultures.PageUrl">Learn More</MudButton>
+            </MudCardActions>
+          </MudCard>
+        </MudItem>
+      }
+    </MudGrid>
+  </ChildContent>
+</MudExpansionPanel>
+
+  @code {
+    private List<SpeciesCard> AllSpecies = new()
   {
-    <MudItem xs="12" sm="6" md="4" lg="3">
-      <MudCard Style="height: 100%;">
-        <MudCardMedia Image="@species.ImageUrl" Height="180" />
-        <MudCardContent>
-          <MudText Typo="Typo.h6">@species.Name</MudText>
-          <MudText Typo="Typo.body2">@species.Summary</MudText>
-        </MudCardContent>
-        <MudCardActions>
-          <MudButton Variant="Variant.Outlined" Href="@species.PageUrl">Learn More</MudButton>
-        </MudCardActions>
-      </MudCard>
-    </MudItem>
+  new SpeciesCard
+  {
+  Name = "Asurai",
+  ImageUrl = "/images/asurai.png",
+  Summary = "Descendants of the Horned Tyrant Asura, these divine-marked beings walk between law and freedom.",
+  PageUrl = "/species/asurai"
+  },
+  new SpeciesCard
+  {
+  Name = "Deva",
+  ImageUrl = "/images/deva.png",
+  Summary = "Description here",
+  PageUrl = "/species/deva"
   }
-</MudGrid>
-
-@code {
-  private List<SpeciesCard> AllSpecies = new()
-    {
-        new SpeciesCard
-        {
-            Name = "Asurai",
-            ImageUrl = "/images/asurai.png",
-            Summary = "Descendants of the Horned Tyrant Asura, these divine-marked beings walk between law and freedom.",
-            PageUrl = "/species/asurai"
-        }
-        // Add more as needed
-    };
-}
+  // Add more as needed
+  };
+    private List<SpeciesCard> AllCultures = new()
+  {
+  new SpeciesCard
+  {
+  Name = "Zaranthi",
+  ImageUrl = "/images/zaranthi.png",
+  Summary = "Description here",
+  PageUrl = "/species/asurai"
+  },
+  new SpeciesCard
+  {
+  Name = "Olyanthian",
+  ImageUrl = "/images/deva.png",
+  Summary = "Description here",
+  PageUrl = "/species/deva"
+  }
+  // Add more as needed
+  };
+  }

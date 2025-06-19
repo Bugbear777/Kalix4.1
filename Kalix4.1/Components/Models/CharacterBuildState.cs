@@ -9,6 +9,8 @@
 
     public Dictionary<string, int> AbilityScores { get; set; } = new()
         {
+            { "Weapon Skill", 0 },
+            { "Ballistic Skill", 0 },
             { "Strength", 0 },
             { "Dexterity", 0 },
             { "Constitution", 0 },
