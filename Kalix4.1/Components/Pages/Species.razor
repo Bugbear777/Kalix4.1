@@ -58,8 +58,8 @@
   </ChildContent>
 </MudExpansionPanel>
 
-  @code {
-    private List<SpeciesCard> AllSpecies = new()
+@code {
+  private List<SpeciesCard> AllSpecies = new()
   {
   new SpeciesCard
   {
@@ -74,10 +74,24 @@
   ImageUrl = "/images/deva.png",
   Summary = "Description here",
   PageUrl = "/species/deva"
-  }
+  },
+    new SpeciesCard
+  {
+  Name = "Dwarf",
+  ImageUrl = "/images/dwarf.png",
+  Summary = "Description here",
+  PageUrl = "/species/dwarf"
+  },
+      new SpeciesCard
+  {
+  Name = "Elf",
+  ImageUrl = "/images/elf.png",
+  Summary = "Description here",
+  PageUrl = "/species/elf"
+  },
   // Add more as needed
   };
-    private List<SpeciesCard> AllCultures = new()
+  private List<SpeciesCard> AllCultures = new()
   {
   new SpeciesCard
   {
@@ -95,4 +109,4 @@
   }
   // Add more as needed
   };
-  }
+}
