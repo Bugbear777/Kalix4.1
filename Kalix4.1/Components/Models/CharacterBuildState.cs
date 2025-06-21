@@ -4,19 +4,18 @@
   {
     public string Species { get; set; }
     public string Culture { get; set; }
-    public string Nationality { get; set; }
+    public string Destiny { get; set; }
     public string Background { get; set; }
+    public string Class { get; set; }
 
     public Dictionary<string, int> AbilityScores { get; set; } = new()
         {
-            { "Weapon Skill", 0 },
-            { "Ballistic Skill", 0 },
-            { "Strength", 0 },
-            { "Dexterity", 0 },
-            { "Constitution", 0 },
-            { "Intelligence", 0 },
-            { "Wisdom", 0 },
-            { "Charisma", 0 }
+            { "Strength", 10 },
+            { "Dexterity", 10 },
+            { "Constitution", 10 },
+            { "Intelligence", 10 },
+            { "Wisdom", 10 },
+            { "Charisma", 10 }
         };
 
     public List<string> Skills { get; set; } = new();

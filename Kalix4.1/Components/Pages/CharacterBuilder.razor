@@ -4,54 +4,58 @@
 
 <h3>Character Builder</h3>
 
-<MudPaper Class="pa-4">
+<MudPaper Class="pa-4, mt-2">
 
-  <MudStepper Nonlinear Elevation="1">
+	<MudStepper Nonlinear Elevation="1">
 
-    <MudStep Title="Species">
-    </MudStep>
+		<MudStep Title="Species">
+		</MudStep>
 
-    <MudStep Title="Culture">
-    </MudStep>
+		<MudStep Title="Culture">
+		</MudStep>
 
-    <MudStep Title="Nationality">
-      <MudTextField @bind-Value="_character.Nationality" Label="Nationality" />
-    </MudStep>
+		<MudStep Title="Destiny">
+			<MudTextField @bind-Value="_character.Destiny" Label="Destiny" />
+		</MudStep>
 
-    <MudStep Title="Background">
-      <MudTextField @bind-Value="_character.Background" Label="Background Summary" Lines="3" />
-    </MudStep>
+		<MudStep Title="Background">
+			<MudTextField @bind-Value="_character.Background" Label="Background Summary" Lines="3" />
+		</MudStep>
 
-    <MudStep Title="Ability Scores">
-      @foreach (var stat in _character.AbilityScores.Keys.ToList())
-      {
-        <MudNumericField T="int" Label="@stat" @bind-Value="_character.AbilityScores[stat]" />
-      }
-    </MudStep>
+		<MudStep Title="Class">
+			<MudTextField @bind-Value="_character.Class" Label="Class" />
+		</MudStep>
 
-    <MudStep Title="Skills">
-    </MudStep>
+		<MudStep Title="Ability Scores">
+			@foreach (var stat in _character.AbilityScores.Keys.ToList())
+			{
+				<MudNumericField T="int" Label="@stat" @bind-Value="_character.AbilityScores[stat]" />
+			}
+		</MudStep>
 
-    <MudStep Title="Equipment">
-    </MudStep>
+		<MudStep Title="Skills">
+		</MudStep>
 
-    <MudStep Title="Generate Character">
-      <MudText Typo="Typo.body1">Click below to generate your character summary.</MudText>
-      <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="GenerateJson">Generate JSON</MudButton>
-      <MudText Typo="Typo.caption" Class="mt-2">JSON Output:</MudText>
-      <MudPaper Class="pa-2 mt-2" Style="white-space: pre-wrap;">@_jsonOutput</MudPaper>
-    </MudStep>
+		<MudStep Title="Equipment">
+		</MudStep>
 
-  </MudStepper>
+		<MudStep Title="Generate Character">
+			<MudText Typo="Typo.body1">Click below to generate your character summary.</MudText>
+			<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="GenerateJson">Generate JSON</MudButton>
+			<MudText Typo="Typo.caption" Class="mt-2">JSON Output:</MudText>
+			<MudPaper Class="pa-2 mt-2" Style="white-space: pre-wrap;">@_jsonOutput</MudPaper>
+		</MudStep>
+
+	</MudStepper>
 
 </MudPaper>
 
 @code {
-  private CharacterBuildState _character = new();
-  private string _jsonOutput = string.Empty;
+	private CharacterBuildState _character = new();
+	private string _jsonOutput = string.Empty;
 
-  private void GenerateJson()
-  {
-    _jsonOutput = JsonSerializer.Serialize(_character, new JsonSerializerOptions { WriteIndented = true });
-  }
+	private void GenerateJson()
+	{
+		_jsonOutput = JsonSerializer.Serialize(_character, new JsonSerializerOptions { WriteIndented = true });
+	}
 }

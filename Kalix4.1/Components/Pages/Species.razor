@@ -4,62 +4,62 @@
 <MudText Typo="Typo.h4" Class="mb-4">Species and Cultures</MudText>
 
 <MudExpansionPanel>
-  <TitleContent>
-    <div class="d-flex">
-      <MudIcon Icon="@Icons.Material.Filled.Groups" Class="mr-2"></MudIcon>
-      <MudText>Species</MudText>
-    </div>
-  </TitleContent>
-  <ChildContent>
-    <MudGrid>
-      @foreach (var species in AllSpecies)
-      {
-        <MudItem xs="12" sm="6" md="4" lg="3">
-          <MudCard Style="height: 100%;">
-            <MudCardMedia Image="@species.ImageUrl" Height="180" />
-            <MudCardContent>
-              <MudText Typo="Typo.h6">@species.Name</MudText>
-              <MudText Typo="Typo.body2">@species.Summary</MudText>
-            </MudCardContent>
-            <MudCardActions>
-              <MudButton Variant="Variant.Outlined" Href="@species.PageUrl">Learn More</MudButton>
-            </MudCardActions>
-          </MudCard>
-        </MudItem>
-      }
-    </MudGrid>
-  </ChildContent>
+	<TitleContent>
+		<div class="d-flex">
+			<MudIcon Icon="@Icons.Material.Filled.Groups" Class="mr-2"></MudIcon>
+			<MudText>Species</MudText>
+		</div>
+	</TitleContent>
+	<ChildContent>
+		<MudGrid>
+			@foreach (var species in AllSpecies)
+			{
+				<MudItem xs="12" sm="6" md="4" lg="3">
+					<MudCard Style="height: 100%;">
+						<MudCardMedia Image="@species.ImageUrl" Height="180" />
+						<MudCardContent>
+							<MudText Typo="Typo.h6">@species.Name</MudText>
+							<MudText Typo="Typo.body2">@species.Summary</MudText>
+						</MudCardContent>
+						<MudCardActions>
+							<MudButton Variant="Variant.Outlined" Href="@species.PageUrl">Learn More</MudButton>
+						</MudCardActions>
+					</MudCard>
+				</MudItem>
+			}
+		</MudGrid>
+	</ChildContent>
 </MudExpansionPanel>
 <MudExpansionPanel>
-  <TitleContent>
-    <div class="d-flex">
-      <MudIcon Icon="@Icons.Material.Filled.Groups" Class="mr-2"></MudIcon>
-      <MudText>Cultures</MudText>
-    </div>
-  </TitleContent>
-  <ChildContent>
-    <MudGrid>
-      @foreach (var cultures in AllCultures)
-      {
-        <MudItem xs="12" sm="6" md="4" lg="3">
-          <MudCard Style="height: 100%;">
-            <MudCardMedia Image="@cultures.ImageUrl" Height="180" />
-            <MudCardContent>
-              <MudText Typo="Typo.h6">@cultures.Name</MudText>
-              <MudText Typo="Typo.body2">@cultures.Summary</MudText>
-            </MudCardContent>
-            <MudCardActions>
-              <MudButton Variant="Variant.Outlined" Href="@cultures.PageUrl">Learn More</MudButton>
-            </MudCardActions>
-          </MudCard>
-        </MudItem>
-      }
-    </MudGrid>
-  </ChildContent>
+	<TitleContent>
+		<div class="d-flex">
+			<MudIcon Icon="@Icons.Material.Filled.Groups" Class="mr-2"></MudIcon>
+			<MudText>Cultures</MudText>
+		</div>
+	</TitleContent>
+	<ChildContent>
+		<MudGrid>
+			@foreach (var cultures in AllCultures)
+			{
+				<MudItem xs="12" sm="6" md="4" lg="3">
+					<MudCard Style="height: 100%;">
+						<MudCardMedia Image="@cultures.ImageUrl" Height="180" />
+						<MudCardContent>
+							<MudText Typo="Typo.h6">@cultures.Name</MudText>
+							<MudText Typo="Typo.body2">@cultures.Summary</MudText>
+						</MudCardContent>
+						<MudCardActions>
+							<MudButton Variant="Variant.Outlined" Href="@cultures.PageUrl">Learn More</MudButton>
+						</MudCardActions>
+					</MudCard>
+				</MudItem>
+			}
+		</MudGrid>
+	</ChildContent>
 </MudExpansionPanel>
 
 @code {
-  private List<SpeciesCard> AllSpecies = new()
+	private List<SpeciesCard> AllSpecies = new()
   {
   new SpeciesCard
   {
@@ -70,28 +70,70 @@
   },
   new SpeciesCard
   {
+  Name = "Cyclops",
+  ImageUrl = "/images/asurai.png",
+  Summary = "Description here",
+  PageUrl = "/species/cyclops"
+  },
+  new SpeciesCard
+  {
   Name = "Deva",
   ImageUrl = "/images/deva.png",
   Summary = "Description here",
   PageUrl = "/species/deva"
   },
-    new SpeciesCard
+  new SpeciesCard
   {
   Name = "Dwarf",
   ImageUrl = "/images/dwarf.png",
   Summary = "Description here",
   PageUrl = "/species/dwarf"
   },
-      new SpeciesCard
+  new SpeciesCard
   {
   Name = "Elf",
   ImageUrl = "/images/elf.png",
   Summary = "Description here",
   PageUrl = "/species/elf"
   },
+  new SpeciesCard
+  {
+  Name = "Goblin",
+  ImageUrl = "/images/elf.png",
+  Summary = "Description here",
+  PageUrl = "/species/goblin"
+  },
+  new SpeciesCard
+  {
+  Name = "Halfling",
+  ImageUrl = "/images/elf.png",
+  Summary = "Description here",
+  PageUrl = "/species/halfling"
+  },
+  new SpeciesCard
+  {
+  Name = "Human",
+  ImageUrl = "/images/elf.png",
+  Summary = "Description here",
+  PageUrl = "/species/human"
+  },
+  new SpeciesCard
+  {
+  Name = "Oxfolk",
+  ImageUrl = "/images/elf.png",
+  Summary = "Description here",
+  PageUrl = "/species/oxfolk"
+  },
+  new SpeciesCard
+  {
+  Name = "Wolfkin",
+  ImageUrl = "/images/elf.png",
+  Summary = "Description here",
+  PageUrl = "/species/wolfkin"
+  },
   // Add more as needed
   };
-  private List<SpeciesCard> AllCultures = new()
+	private List<SpeciesCard> AllCultures = new()
   {
   new SpeciesCard
   {

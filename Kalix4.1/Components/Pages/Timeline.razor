@@ -1,53 +1,56 @@
 ﻿@page "/timeline"
 <h1>Timeline of the Epochs</h1>
 <MudTimeline TimelineOrientation="TimelineOrientation.Vertical">
-  <MudTimelineItem Color="Color.Error">
-    <ItemOpposite>
-      <MudText Color="Color.Error" Typo="Typo.subtitle1">Dates Unknown</MudText>
-    </ItemOpposite>
-    <ItemContent>
-      <MudText Color="Color.Error" Typo="Typo.h6">The Epochs of the Gods</MudText>
-      <MudText>A time of mythical obscurity where the gods walked Kalix in physical form and lead empires and kingdoms.</MudText>
-    </ItemContent>
-  </MudTimelineItem>
-  <MudTimelineItem Color="Color.Warning">
-    <ItemOpposite>
-      <MudText Color="Color.Warning" Typo="Typo.subtitle1">Year -10512</MudText>
-    </ItemOpposite>
-    <ItemContent>
-      <MudText Color="Color.Warning" Typo="Typo.h6">The Sundering</MudText>
-      <MudText>The great cataclysm that shattered the world resulting in the destruction of the gods and ending the Third Epoch. All civilizations fell and mortal races were left to rebuild in a new shattered world filled with monsters of all kinds</MudText>
-      </ItemContent>
-  </MudTimelineItem>
-  <MudTimelineItem Color="Color.Success">
-    <ItemOpposite>
-      <MudText Color="Color.Success" Typo="Typo.subtitle1">Year -1143</MudText>
-    </ItemOpposite>
-    <ItemContent>
-      <MudText Color="Color.Success" Typo="Typo.h6">War of Invasions</MudText>
-      <MudText>The end of the Fourth Epoch, the Epoch of Heroes, ended with an invasion of voidspawn from the Outer Darks. Death ravaged the lands as armies marched and clashed until the Voidspawn were once again banished from Kalix</MudText>
-    </ItemContent>
-  </MudTimelineItem>
-  <MudTimelineItem Color="Color.Dark">
-    <ItemOpposite>
-      <MudText Color="Color.Dark" Typo="Typo.subtitle1"><b>Year 479</b></MudText>
-    </ItemOpposite>
-    <ItemContent>
-      <MudText Color="Color.Dark" Typo="Typo.h6">2nd War of Invasions</MudText>
-      <MudText>The world wide collapse of the empires that had formed the bastion of defense against the return of the Voidspawn. This collapse lead to the 2nd War of Invasions as the Voidspawn returned causing death and destruction once more.</MudText>
-    </ItemContent>
-  </MudTimelineItem>
-  <MudTimelineItem Color="Color.Primary">
-    <ItemOpposite>
-      <MudText Color="Color.Primary" Typo="Typo.subtitle1">Year 1435</MudText>
-    </ItemOpposite>
-    <ItemContent>
-      <MudText Color="Color.Primary" Typo="Typo.h6">The 3rd War of Invasions</MudText>
-      <MudText>The 3rd War of Invasions began on the Continent of Annwn with the downfall of the final remnants of the Elven Hierocracy and the banishment of the Knights Chosen leading to the Voidspawn returning once more.</MudText>
-      <MudFab Class="mt-2" StartIcon="@Icons.Material.Filled.Timeline" Label="The 6th Epoch" Href="/timeline/sixth" />
-    </ItemContent>
-  </MudTimelineItem>
-  <!-- Add more timeline items as needed -->
+	<MudTimelineItem Color="Color.Error">
+		<ItemOpposite>
+			<MudText Color="Color.Error" Typo="Typo.subtitle1">Dates Unknown</MudText>
+		</ItemOpposite>
+		<ItemContent>
+			<MudText Color="Color.Error" Typo="Typo.h6">The Epochs of the Gods</MudText>
+			<MudText>A time of mythical obscurity where the gods walked Kalix in physical form and lead empires and kingdoms.</MudText>
+		</ItemContent>
+	</MudTimelineItem>
+	<MudTimelineItem Color="Color.Warning">
+		<ItemOpposite>
+			<MudText Color="Color.Warning" Typo="Typo.subtitle1">Year ~10,000</MudText>
+		</ItemOpposite>
+		<ItemContent>
+			<MudText Color="Color.Warning" Typo="Typo.h6">The Sundering</MudText>
+			<MudText>The great cataclysm that shattered the world resulting in the destruction of the gods and ending the Third Epoch. All civilizations fell and mortal races were left to rebuild in a new shattered world filled with monsters of all kinds</MudText>
+			<MudFab Class="mt-2" StartIcon="@Icons.Material.Filled.Timeline" Label="The 4th Epoch" Href="/timeline/fourth" />
+		</ItemContent>
+	</MudTimelineItem>
+	<MudTimelineItem Color="Color.Success">
+		<ItemOpposite>
+			<MudText Color="Color.Success" Typo="Typo.subtitle1">Year -1143</MudText>
+		</ItemOpposite>
+		<ItemContent>
+			<MudText Color="Color.Success" Typo="Typo.h6">War of Invasions</MudText>
+			<MudText>The end of the Fourth Epoch, the Epoch of Heroes, ended with an invasion of voidspawn from the Outer Darks. Death ravaged the lands as armies marched and clashed until the Voidspawn were once again banished from Kalix</MudText>
+			<MudFab Class="mt-2" StartIcon="@Icons.Material.Filled.Timeline" Label="The 5th Epoch" Href="/timeline/fifth" />
+		</ItemContent>
+	</MudTimelineItem>
+	<MudTimelineItem Color="Color.Dark">
+		<ItemOpposite>
+			<MudText Color="Color.Dark" Typo="Typo.subtitle1"><b>Year 479</b></MudText>
+		</ItemOpposite>
+		<ItemContent>
+			<MudText Color="Color.Dark" Typo="Typo.h6">2nd War of Invasions</MudText>
+			<MudText>The world wide collapse of the empires that had formed the bastion of defense against the return of the Voidspawn. This collapse lead to the 2nd War of Invasions as the Voidspawn returned causing death and destruction once more.</MudText>
+			<MudFab Class="mt-2" StartIcon="@Icons.Material.Filled.Timeline" Label="The 6th Epoch" Href="/timeline/sixth" />
+		</ItemContent>
+	</MudTimelineItem>
+	<MudTimelineItem Color="Color.Primary">
+		<ItemOpposite>
+			<MudText Color="Color.Primary" Typo="Typo.subtitle1">Year 1435</MudText>
+		</ItemOpposite>
+		<ItemContent>
+			<MudText Color="Color.Primary" Typo="Typo.h6">The 3rd War of Invasions</MudText>
+			<MudText>The 3rd War of Invasions began on the Continent of Annwn with the downfall of the final remnants of the Elven Hierocracy and the banishment of the Knights Chosen leading to the Voidspawn returning once more.</MudText>
+			<MudFab Class="mt-2" StartIcon="@Icons.Material.Filled.Timeline" Label="The 7th Epoch" Href="/timeline/seventh" />
+		</ItemContent>
+	</MudTimelineItem>
+	<!-- Add more timeline items as needed -->
 </MudTimeline>
 
 @code {
